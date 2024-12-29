@@ -211,7 +211,7 @@
         function redirectToUrl() {
             const input = document.getElementById('trackingCode').value.trim();
             if (input.length === 6) {
-                const url = `https://motokod.com/${encodeURIComponent(input)}`;
+                const url = `https://motokod.com/${encodeURIComponent(input)}/`;
                 window.location.href = url;
             } else {
                 alert('Lütfen 6 haneli bir takip numarası giriniz!');
