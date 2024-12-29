@@ -1,84 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ferhat</title>
-    <link rel="icon" href="img/profile.jpg" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <!-- Link To CSS -->
+    <title>Motokod</title>
+    <style>
+        :root {
+            --background-color: #080b1a;
+            --text-color: #fff;
+            --button-bg-color: #ffffff;
+            --button-text-color: #000;
+        }
 
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Link Swiper CSS -->
-    <link rel="stylesheet" href="css/swiper-bundle.min.css">
-    <!-- Box Icons -->
-    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-color);
+            position: relative;
+            left: 10rem;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            left: 30rem;
+        }
+
+        .navbar ul li {
+            margin-left: 3rem;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        .navbar ul li a:hover,
+        .navbar ul li a.active {
+            color: #f39c12;
+        }
+
+        .theme-toggle {
+            font-size: 1.3rem;
+            cursor: pointer;
+            color: var(--text-color);
+            padding-right: 10rem;
+        }
+
+        .container {
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 80%;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        .content h1 {
+            font-size: 5rem;
+            margin: 0;
+        }
+
+        .content p {
+            font-size: 1.25rem;
+            margin-top: -15px;
+        }
+
+        .input-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .input-section label {
+            font-size: 1.7rem;
+            margin-bottom: 16px;
+        }
+
+        .input-section input[type="text"] {
+            padding: 10px;
+            width: 250px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            background-color: transparent;
+            border-bottom: 2px solid var(--text-color);
+            color: var(--text-color);
+        }
+
+        .input-section button {
+            padding: 8px 26px;
+            font-size: 1rem;
+            background-color: var(--button-bg-color);
+            color: var(--button-text-color);
+            border: 0.02rem solid var(--text-color);
+            border-radius: 32px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .input-section button:hover {
+            background-color: #e0e0e0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .input-section {
+                align-items: center;
+                margin-top: 20px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <!-- Scroll Top -->
-    <a href="#home" class="scroll-top">
-        <i class='bx bx-up-arrow-alt' ></i>
-    </a>
-    <!-- Header -->
-     <center>
-    <header>
-        <div class="redirect">
-            <h1>Motokod: Soruna Çözüm Getiren Kod</h1>
-            <input type="text" id="inputText" placeholder="Sticker üzerinde bulunan kodu giriniz...">
-            <button onclick="redirectToUrl()">Go</button>
+    <nav class="navbar">
+        <div class="logo">motokod</div>
+        <ul>
+            <li><a href="#" class="active">anasayfa</a></li>
+            <li><a href="#">hakkımızda</a></li>
+            <li><a href="#">ürünler</a></li>
+            <li><a href="#">iletişim</a></li>
+        </ul>
+        <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
+    </nav>
+    <div class="container">
+        <div class="content">
+            <h1>MOTOKOD</h1>
+            <p>Soruna Çözüm Getiren Kod</p>
         </div>
-    </center>
-        
-    <!-- Home -->
-    <section class="home container" id="home">
-        <div class="home-content">
-            <div class="home-text">
-                    <br>
-                    <br>
-                <h1>Çalışmalarımız tüm hızıyla sürüyor. Sizi Motokod’un kolaylıklarıyla buluşturmak için sabırsızlanıyoruz!</h1>
-                <br>
-                <!-- Social -->
-                <div class="social">
-                    <a href="tel:+902129092310" target="_blank"><i class='bx bx-phone'></i></a>
-                    <a href="https://www.instagram.com/fvrhatb/" target="_blank"><i class='bx bxl-instagram'></i></a>
-                    <a href="https://www.tiktok.com/ferhatb/" target="_blank"><i class='bx bxl-tiktok'></i></a>
-                </div>
-            </div>
+        <div class="input-section">
+            <label for="trackingCode">Motosiklet Takip Kodu</label>
+            <input type="text" id="trackingCode" placeholder="Takip Numarasını Giriniz..." maxlength="6" oninput="toggleButtonVisibility()">
+            <button id="searchButton" onclick="redirectToUrl()">Ara</button>
         </div>
-        
-    </section>
-    
-    
-   
+    </div>
 
-
-    <!-- Email Js Link -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <!-- Sweet Alert Js Link -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-        emailjs.init("af90b0815c1f86cc91dfd7a21df3e905 "); // You will use your email js api key here
-        })();
-    </script>
-    
-
-
-    <!-- Link Swiper Js -->
-    <script src="js/swiper-bundle.min.js"></script>
-    <!-- Link To JS -->
-    <script src="js/main.js"></script>
     <script>
+        function toggleTheme() {
+            const root = document.documentElement;
+            const currentTheme = root.style.getPropertyValue('--background-color') === '#fff' ? 'light' : 'dark';
+
+            if (currentTheme === 'dark') {
+                root.style.setProperty('--background-color', '#fff');
+                root.style.setProperty('--text-color', '#000');
+                root.style.setProperty('--button-bg-color', '#000');
+                root.style.setProperty('--button-text-color', '#fff');
+                document.querySelector('.theme-toggle').textContent = '🌙';
+            } else {
+                root.style.setProperty('--background-color', '#080b1a');
+                root.style.setProperty('--text-color', '#fff');
+                root.style.setProperty('--button-bg-color', '#fff');
+                root.style.setProperty('--button-text-color', '#000');
+                document.querySelector('.theme-toggle').textContent = '☀️';
+            }
+        }
+
+        function toggleButtonVisibility() {
+            const input = document.getElementById('trackingCode').value.trim();
+            const button = document.getElementById('searchButton');
+            if (input.length === 6) {
+                button.style.display = 'inline-block';
+            } else {
+                button.style.display = 'none';
+            }
+        }
+
         function redirectToUrl() {
-            const input = document.getElementById('inputText').value.trim();
-            if (input) {
+            const input = document.getElementById('trackingCode').value.trim();
+            if (input.length === 6) {
                 const url = `https://motokod.com/${encodeURIComponent(input)}`;
                 window.location.href = url;
             } else {
-                alert('Please enter a valid text!');
+                alert('Lütfen 6 haneli bir takip numarası giriniz!');
             }
         }
     </script>
 </body>
+
 </html>
