@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ferhat</title>
     <link rel="icon" href="img/profile.jpg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <!-- Link To CSS -->
 
     <link rel="stylesheet" href="css/style.css">
@@ -20,21 +21,23 @@
         <i class='bx bx-up-arrow-alt' ></i>
     </a>
     <!-- Header -->
+     <center>
     <header>
-       
+        <div class="redirect">
+            <h1>Motokod: Soruna Çözüm Getiren Kod</h1>
+            <input type="text" id="inputText" placeholder="Sticker üzerinde bulunan kodu giriniz...">
+            <button onclick="redirectToUrl()">Go</button>
+        </div>
+    </center>
+        
     <!-- Home -->
     <section class="home container" id="home">
         <div class="home-content">
-            <div class="home-img">
-                <img src="img/profile.jpg" alt="">
-            </div>
             <div class="home-text">
-                <h3>Selam</h3>
-                <h2>Ben <span class="color ferhat">Ferhat</span></h2>
-                <p>
-                    Bana ulaşmak için aşağıdaki telefon butonuna tıklayın. Telesekreter devreye girdiğinde <span class="color">179 329</span> 'u tuşlayarak direkt beni arayabilirsiniz.
-
-                </p>
+                    <br>
+                    <br>
+                <h1>Çalışmalarımız tüm hızıyla sürüyor. Sizi Motokod’un kolaylıklarıyla buluşturmak için sabırsızlanıyoruz!</h1>
+                <br>
                 <!-- Social -->
                 <div class="social">
                     <a href="tel:+902129092310" target="_blank"><i class='bx bx-phone'></i></a>
@@ -43,6 +46,7 @@
                 </div>
             </div>
         </div>
+        
     </section>
     
     
@@ -55,14 +59,26 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script type="text/javascript">
         (function() {
-        emailjs.init("af90b0815c1f86cc91dfd7a21df3e905"); // You will use your email js api key here
+        emailjs.init("af90b0815c1f86cc91dfd7a21df3e905 "); // You will use your email js api key here
         })();
     </script>
+    
 
 
     <!-- Link Swiper Js -->
     <script src="js/swiper-bundle.min.js"></script>
     <!-- Link To JS -->
     <script src="js/main.js"></script>
+    <script>
+        function redirectToUrl() {
+            const input = document.getElementById('inputText').value.trim();
+            if (input) {
+                const url = `https://motokod.com/${encodeURIComponent(input)}`;
+                window.location.href = url;
+            } else {
+                alert('Please enter a valid text!');
+            }
+        }
+    </script>
 </body>
 </html>

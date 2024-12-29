@@ -17,8 +17,8 @@ Description: Explore Andrew, a responsive HTML portfolio template designed for s
 }
 /* Variables */
 :root{
-  --main-color:#647bff;
-  --body-color:#090a1a;
+  --main-color:#ffffff;
+  --body-color:hwb(240 9% 90%);
   --container-color:#171b3c;
   --heading-color:#222231;
   --box-color:#0d0f26;
@@ -146,6 +146,7 @@ header{
   }
 }
 
+
 .ferhat {
   animation: fadeIn 2s ease-in-out 1s infinite alternate;
 }
@@ -177,8 +178,10 @@ header{
   align-items: center;
   justify-content: center;
   text-align: center;
+  animation: glow2 1s ease-in-out infinite alternate;
 }
-.home-text h3{
+
+.home-text h1{
   position: relative;
   display: flex;
   align-items: center;
@@ -186,6 +189,7 @@ header{
   font-size: 1.1rem;
   color: var(--main-color);
 }
+
 .home-text h3::before{
   content: '';
   position: absolute;
@@ -222,6 +226,7 @@ header{
   align-items: center;
   column-gap: 0.5rem;
 }
+
 .social .bx{
   font-size: 1.3rem;
   padding: 10px;
@@ -240,6 +245,49 @@ header{
   color: var(--heading-color);
   text-align: center;
   margin-bottom: 2rem;
+}
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 5px #ff0000;
+  }
+  to {
+    text-shadow: 0 0 20px #000000;
+  }
+}
+@-webkit-keyframes glow2 {
+  from {
+    text-shadow: 0 0 5px #fff;
+  }
+  to {
+    text-shadow: 0 0 20px #fff;
+  }
+}
+.redirect {
+  color: red;
+  padding: 200px;
+  border-radius: 8px;
+  align-items: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+input[type="text"] {
+  padding: 0.7rem;
+  color: red;
+  width: 20rem;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  font-size: 10px;
+}
+button {
+  scale: 80%;
+  padding: 1rem;
+  margin-left: 5px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .about-content{
   display: grid;

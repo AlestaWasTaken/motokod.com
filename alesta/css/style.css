@@ -124,7 +124,7 @@ header{
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 7rem;
+  padding-top: 15rem;
 }
 .home-content{
   position: relative;
@@ -136,7 +136,22 @@ header{
   align-items: center;
   justify-content: center;
 }
+
+@keyframes fadeIn {
+  0% {
+      color: #98a7fc;
+  }
+  100% {
+      color: #ffffff;
+  }
+}
+
+.ferhat {
+  animation: fadeIn 2s ease-in-out 1s infinite alternate;
+}
+
 .home-img{
+  cursor: pointer;
   width: 180px;
   height: 180px;
   border-radius: 50%;
@@ -144,6 +159,12 @@ header{
   overflow: hidden;
   margin-bottom:2rem ;
 }
+
+.home-img:hover {
+  transition: all 0.3s;
+  transform: scale(1.1);
+}
+
 .home-img{
   width: 180px;
   height: 180px;
@@ -534,7 +555,7 @@ header{
   }
   .home {
     min-height: 500px;
-    padding-top: 6rem;
+    padding-top: 15rem;
   }
   .home-text h3 {
     font-size: 1rem;
@@ -601,7 +622,7 @@ header{
 @media (max-width:450px){
   .home {
     min-height: 485px;
-    padding-top: 5rem;
+    padding-top: 15rem;
   }
   .home-img {
     width: 140px;
