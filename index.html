@@ -41,11 +41,13 @@
                 <h3 class="white fs-l3 lh-2 md-fs-xl1 md-lh-1 fw-650 ">Araç Bilgilerine Hızlı Erişim</h3>
 
                 <div class="br-8 mt-10 inline-flex">
-                    <input type="text" id="userInput" maxlength="6" onkeypress="handleKeyPress(event)"
-                        class="input-lg half bw-0 fw-200 bg-indigo-lightest-10 white ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 min-w-25vw br-r-0"
-                        placeholder="6 Haneli Takip Kodunu Girin.">
-                    <button class="button-lg bg-indigo-lightest-20 indigo-lightest focus-white fw-300 fs-s3 mr-0 br-l-0"
-                        onclick="redirectToInput()">Ara</button>
+                    <input type="text" id="userInput" maxlength="6" oninput="validateInput(event)" 
+                    class="input-lg half bw-0 fw-200 bg-indigo-lightest-10 white ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 min-w-25vw br-r-0"
+                    placeholder="6 Haneli Takip Kodunu Girin.">
+                    <button
+                        class="button-lg bg-indigo-lightest-20 indigo-lightest focus-white fw-300 fs-s3 mr-0 br-l-0" onclick="redirectToInput()">Ara</button>
+                </div>
+                <div id="errorMessage" style="display: none;" class="fs-s1 mx-0 py-3 red no-underline">Lütfen 6 haneli bir sayı giriniz.</div>
                 </div>
             </div>
     </section>
@@ -313,14 +315,19 @@
 <script>
     function redirectToInput() {
         const input = document.getElementById('userInput').value.trim();
+        const errorMessage = document.getElementById('errorMessage');
+        
+        // Eğer input geçerli ise yönlendirme yapılır
         if (input.length === 6 && !isNaN(input)) {
             window.location.href = `./users/${input}/`;
         } else {
-            alert('Lütfen 6 haneli bir sayı giriniz.');
+            // Geçerli değilse hata mesajını göster
+            errorMessage.style.display = 'block';
         }
     }
 
     function handleKeyPress(event) {
+        // Yalnızca Enter tuşuna basıldığında işlem yapılır
         if (event.key === 'Enter') {
             redirectToInput();
         }
@@ -328,11 +335,16 @@
 
     function validateInput(event) {
         const input = event.target.value;
+        const errorMessage = document.getElementById('errorMessage');
+        
         // Harf girmesini engelle ve sadece sayı olmasına izin ver
         if (isNaN(input) || input.length > 6) {
             event.target.value = input.slice(0, 6); // Sadece 6 haneli sayı kabul et
         }
     }
+
+    // Bu satırda, input elemanına keydown olayını ekliyoruz
+    document.getElementById('userInput').addEventListener('keydown', handleKeyPress);
 </script>
 
 </html>
