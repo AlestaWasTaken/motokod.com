@@ -313,16 +313,24 @@
 <script>
     function redirectToInput() {
         const input = document.getElementById('userInput').value.trim();
-        if (input) {
+        if (input.length === 6 && !isNaN(input)) {
             window.location.href = `./users/${input}/`;
         } else {
-            alert('0 Haneli Takip Kodunu Girmediniz.');
+            alert('Lütfen 6 haneli bir sayı giriniz.');
         }
     }
 
     function handleKeyPress(event) {
         if (event.key === 'Enter') {
             redirectToInput();
+        }
+    }
+
+    function validateInput(event) {
+        const input = event.target.value;
+        // Harf girmesini engelle ve sadece sayı olmasına izin ver
+        if (isNaN(input) || input.length > 6) {
+            event.target.value = input.slice(0, 6); // Sadece 6 haneli sayı kabul et
         }
     }
 </script>
