@@ -1,1 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotoKod</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        .dark {
+            background-color: #000 !important;
+        }
+
+        .dark2 {
+            background-color: #101010 !important;
+        }
+
+        .profilepic {
+            width: 12rem;
+            height: 12rem;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .btn-color {
+            background-color: #5a4fcf !important;
+            color: #fff !important;
+        }
+
+        .collapse .card-body {
+            padding: 0 !important;
+        }
+
+        @media (max-width: 768px) {
+            .profilepic {
+                width: 8rem;
+                height: 8rem;
+            }
+
+            .btn-color {
+                padding: 0.5rem 1rem;
+            }
+
+            .list-group-item {
+                padding: 0.75rem 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .profilepic {
+                width: 6rem;
+                height: 6rem;
+            }
+
+            .btn-color {
+                padding: 0.4rem 1rem;
+            }
+
+            .list-group-item {
+                padding: 0.5rem;
+            }
+
+            .collapse .card-body {
+                padding: 0;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid dark">
+        <div class="container p-5 d-flex justify-content-center align-items-center min-vh-100">
+            <div class="row dark2 shadow-lg p-5 rounded">
+                <div class="col-12 text-center">
+                    <img src="profile.jpg" alt="MotoKod"
+                        class="img-fluid rounded-circle profilepic mb-3 border border-2 border-white">
+                    <h1 class="text-white">Samet Dursun</h1>
+                    <p class="text-white">
+                        Merhaba, Motor ile ilgili bir sorun mu var?<br>
+                        Benimle iletişime geçebilirsiniz.
+                    </p>
+                </div>
+
+                <div class="col-12">
+                    <div class="text-center">
+                        <ul class="list-group list-group-horizontal justify-content-center">
+                            <li class="list-group-item dark2 text-white border-0 p-2">Tür: <span
+                                    class="text-warning">Motosiklet</span></li>
+                            <li class="list-group-item dark2 text-white border-0 p-2">Marka: <span
+                                    class="text-warning">Kymco</span></li>
+                            <li class="list-group-item dark2 text-white border-0 p-2">Model: <span
+                                    class="text-warning">Agility125</span></li>
+                        </ul>
+                    </div>
+                    <div class="text-center my-3">
+                        <a href="tel:+905376524430" class="btn btn-color my-1 mx-2" title="Telefonla İletişime Geç">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                        <a href="https://wa.me/+905376524430" class="btn btn-color my-1 mx-2" title="WhatsApp ile İletişime Geç">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.instagram.com/sametdrs3/" class="btn btn-color my-1 mx-2" title="Instagram'da Takip Et">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Acil Durum Butonu -->
+                <div class="col-12 text-center">
+                    <button class="btn btn-danger px-4 mt-2" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#carTypes" aria-expanded="false" aria-controls="carTypes">
+                        <i class="fas fa-exclamation-triangle"></i> Acil Durum
+                    </button>
+
+                    <!-- Açılır Kapanır Liste (Collapse) -->
+                    <div class="collapse mt-0" id="carTypes">
+                        <div class="card card-body p-0 border-0">
+                            <ul class="list-group">
+                                <li class="list-group-item dark2 text-white border-0 bold fs-4">Kişisel Bilgiler</li>
+                                <li class="list-group-item dark2 text-white border-0">Kan Grubu: Arh+</li>
+                                <li class="list-group-item dark2 text-white border-0">Sürekli Rahatsızlığı: Yok</li>
+                                <li class="list-group-item dark2 text-white border-0">Kullandığı İlaçlar: Yok</li>
+                                <li class="list-group-item dark2 text-white border-0">Geçirdiği Ameliyat: Yok</li>
+                                <li class="list-group-item dark2 text-white border-0">Alerji: Yok</li>
+                                <li class="list-group-item dark2 text-white border-0 bold fs-4">Acil Durum Kişileri</li>
+                                <li class="list-group-item dark2 text-white border-0">Kardeş: <a
+                                        href="tel:+905376524430" class="my-1 mx-1">Selim Dursun</a></li>
+                                <li class="list-group-item dark2 text-white border-0">Arkadaş: <a
+                                        href="tel:+905376524430" class="my-1 mx-1">Umut Gürkan</a></li>
+                                <li class="list-group-item dark2 text-white border-0">Arkadaş: <a
+                                        href="tel:+905376524430" class="my-1 mx-1">Ferhat Bayram</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
