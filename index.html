@@ -312,52 +312,6 @@
     <script src="assets/js/script.js"></script>
 </body>
 
-<script>
-    function redirectToInput() {
-        const input = document.getElementById('userInput').value.trim();
-        const errorMessage = document.getElementById('errorMessage');
-        
-        // Eğer input boşsa hata mesajını göster
-        if (input.length === 0) {
-            errorMessage.style.display = 'block';
-            errorMessage.textContent = 'Takip kodu boş bırakılamaz.';
-            return; // Fonksiyonu sonlandırarak diğer işlemleri engelle
-        }
-
-        // Eğer input geçerli ise yönlendirme yapılır
-        if (input.length === 6 && !isNaN(input)) {
-            window.location.href = `./users/${input}/`;
-        } else {
-            // Geçerli değilse hata mesajını göster
-            errorMessage.style.display = 'block';
-            errorMessage.textContent = 'Hatalı giriş! Lütfen 6 haneli bir sayı girin.';
-        }
-    }
-
-    function handleKeyPress(event) {
-        // Yalnızca Enter tuşuna basıldığında işlem yapılır
-        if (event.key === 'Enter') {
-            redirectToInput();
-        }
-    }
-
-    function validateInput(event) {
-        const input = event.target.value;
-        const errorMessage = document.getElementById('errorMessage');
-        
-        // Harf girmesini engelle ve sadece sayı olmasına izin ver
-        if (isNaN(input) || input.length > 6) {
-            event.target.value = input.slice(0, 6); // Sadece 6 haneli sayı kabul et
-        }
-
-        // Input boşsa, hata mesajını gizle
-        if (input.length === 0) {
-            errorMessage.style.display = 'none';
-        }
-    }
-
-    // Bu satırda, input elemanına keydown olayını ekliyoruz
-    document.getElementById('userInput').addEventListener('keydown', handleKeyPress);
-</script>
+<script src="script.js"></script>
 
 </html>
